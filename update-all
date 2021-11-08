@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sudo apt update -y
+sudo apt upgrade
+sudo apt autoremove -y
+rustup update
+flatpak update
+#pip3 list -o --format columns|  cut -d' ' -f1|xargs -n1 pip install -U
+
+for EXTEN in $(code --list-extensions)
+do
+		  code --install-extension $EXTEN --force
+done
+
+# vim: syntax=bash
